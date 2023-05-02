@@ -1,14 +1,16 @@
-#coding=utf-8
 
+# Задача 10: На столе лежат n монеток. Некоторые из них лежат вверх решкой, а некоторые – гербом. 
+# Определите минимальное число монеток, которые нужно перевернуть, чтобы все монетки были повернуты вверх одной и той же стороной. 
+# Выведите минимальное количество монет, которые нужно перевернуть
 
-coins = input(f'Input several numbers equal to 0 or 1, using space key as separator (1 - reverse, 0 - averse): ').split()
+coins = input(f'Input several numbers equal to 0 or 1, using space key as separator (1 - heads, 0 - tails): ').split()
 coins = [int(coin) for coin in coins]
-averse = 0
-reverse = 0
+heads = 0
+tails = 0
 for coin in coins:
     if coin:
-        averse += 1
+        heads += 1
     else:
-        reverse += 1
+        tails += 1
 
-print(f'You need to turn {averse if averse <= reverse else reverse} coins')
+print(f'You need to flip {heads if heads <= tails else tails} coins')
